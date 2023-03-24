@@ -1,5 +1,74 @@
+@import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 body {
-    background-image: url();
+    background-color: $primary;
+}
+ 
+.login-input {
+    outline: none;
+    border-radius: 25px;
+    
+    border: 2px solid $primary;
+    &:focus {
+        background-color: $secondary;
+        border: 2px solid $green;
+        box-shadow: none;
+    }
+}
+
+.btn {
+    border-radius: 25px;
+    border: none;
+    background-color: $green;
+    color: $primary;
+    &:hover{
+        background-color: $light-green;
+        color: $primary;
+    }
+}
+
+.hero-banner {
+    position: relative;
+    background-image: url(../../img/background.jpg);
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.filter {
+    position: absolute;
+    height: 100%;
+    background-color: grayscale($color: #00000096);
+    z-index: 0;
+    & .container h1, .container p {
+        color: white;
+    } 
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        background-color: none;
+        z-index: 22;
+        height: 100%;
+        align-items: start;
+        & .login-container {
+            justify-content: center;
+        }
+    form {
+        margin-top: 5rem;
+
+    }
+    }
+
+    .hero-banner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 100vh;
+        & .container { margin-top: 35rem;}
+    }
 }
